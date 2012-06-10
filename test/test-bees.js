@@ -11,9 +11,23 @@ vows
       'example.js': {
         topic: bees(example),
         'should return correct json': function(json) {
-          assert.equal(
+          assert.deepEqual(
             json,
-            '[{"method":"GET","path":"/","return":"Main page"},{"method":"GET","path":"/:id","params":{"id":"id of the user"},"return":"user infos"}]'
+            [
+              {
+                "method": "GET",
+                "path": "/",
+                "return": "Main page"
+              },
+              {
+                "method": "GET",
+                "path": "/:id",
+                "params": {
+                  "id": "id of the user"
+                },
+                "return": "user infos"
+              }
+            ]
           );
         }
       }
