@@ -46,7 +46,6 @@ $ bees app.js
   {
     "method":"GET",
     "path":"/",
-    "params":{},
     "return":"Main page"
   },
   {
