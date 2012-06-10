@@ -4,7 +4,7 @@ bees (in Italian ```API``` means ```bees```)
 
 Let the code write your docs D:
 
-## Install
+## Installation:
 
 ```
 $ npm install bees
@@ -60,7 +60,7 @@ $ bees app.js
 
 ```
 
-## To Do
+## To Do:
 
 - Generate HTML from JSON
 
