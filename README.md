@@ -54,3 +54,13 @@ $ bees app.js
 ]
 
 ```
+
+(json 2 html is coming)
+
+## Tests:
+
+```
+$ npm test
+```
+
+tests are written with Vows
