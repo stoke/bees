@@ -1,0 +1,10 @@
+{
+  "name": "bees",
+  "version": "0.0.1",
+  "devDependencies": {
+    "vows": ">= 0.0.0"
+  },
+  "scripts": {
+    "test": "vows --spec --isolate test/test-*.js"
+  }
+}
