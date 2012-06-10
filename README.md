@@ -60,6 +60,41 @@ $ bees app.js
 
 ```
 
+## Plugin:
+
+You can extend Bees and add new keywords with a tiny plugin system (see ```lib/plugins```)
+
+```javascript
+var bees = require('bees');
+bees.use('plugin', function(cmd, json) {
+  json.plugin = cmd[1];
+});
+console.log(
+  bees.parse(
+    require('fs').readFileSync('./app.js','utf-8')
+  )
+);
+
+```
+
+Now you can use it
+
+```javascript
+/**
+ * GET /:id
+ * 
+ * @param id id of the user
+ * @return user infos
+ * @plugin hai lol
+*/
+```
+
+```
+$ node plugin.js
+
+```
+
+
 ## To Do:
 
 - Generate HTML from JSON

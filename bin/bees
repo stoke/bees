@@ -8,7 +8,7 @@ if(!process.argv[2]) {
 
 console.log(
   JSON.stringify(
-    bees(require('fs').readFileSync(process.argv[2], 'utf-8')),
+    bees.parse(require('fs').readFileSync(process.argv[2], 'utf-8')),
     null,
     2
   )

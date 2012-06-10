@@ -9,7 +9,7 @@ vows
   .addBatch(
     {
       'example.js': {
-        topic: bees(example),
+        topic: bees.parse(example),
         'should return correct json': function(json) {
           assert.deepEqual(
             json,
