@@ -55,7 +55,9 @@ $ bees app.js
 
 ```
 
-(json 2 html is coming)
+## To Do
+
+- Html files from parsed JSON
 
 ## Tests:
 
