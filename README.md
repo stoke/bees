@@ -57,7 +57,7 @@ $ bees app.js
 
 ## To Do
 
-- Html files from parsed JSON
+- Generate HTML from JSON
 
 ## Tests:
 
@@ -65,4 +65,4 @@ $ bees app.js
 $ npm test
 ```
 
-tests are written with Vows
+Tests are written with Vows
