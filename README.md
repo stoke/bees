@@ -4,6 +4,12 @@ bees (in Italian ```API``` means ```bees```)
 
 Let the code write your docs D:
 
+## Install
+
+```
+$ npm install bees
+```
+
 ## Example: 
 
 __app.js__
