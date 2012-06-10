@@ -74,7 +74,6 @@ console.log(
     require('fs').readFileSync('./app.js','utf-8')
   )
 );
-
 ```
 
 Now you can use it
