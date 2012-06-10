@@ -1,6 +1,8 @@
 {
   "name": "bees",
   "version": "0.0.2",
+  "author": "yawnt <yawn.localhost@gmail.com>",
+  "description": "HTTP API Generator",
   "devDependencies": {
     "vows": ">= 0.0.0"
   },
@@ -9,5 +11,9 @@
   },
   "bin": {
     "bees" : "./bin/bees"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yawnt/bees.git"
   }
 }
