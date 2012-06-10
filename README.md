@@ -71,3 +71,7 @@ $ npm test
 ```
 
 Tests are written with Vows
+
+## License:
+
+[WTFPL 2](http://sam.zoy.org/wtfpl/)
