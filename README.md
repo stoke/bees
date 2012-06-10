@@ -91,7 +91,15 @@ Now you can use it
 
 ```
 $ node plugin.js
-
+[
+  {
+    method: 'GET',
+    path: '/:id',
+    params: { id: 'id of the user' },
+    return: 'user infos',
+    plugin: 'hai lol'
+  }
+]
 ```
 
 
