@@ -13,7 +13,7 @@ vows
         'should return correct json': function(json) {
           assert.equal(
             json,
-            '[{"method":"GET","path":"/","params":{},"return":"Main page"},{"method":"GET","path":"/:id","params":{"id":"id of the user"},"return":"user infos"}]'
+            '[{"method":"GET","path":"/","return":"Main page"},{"method":"GET","path":"/:id","params":{"id":"id of the user"},"return":"user infos"}]'
           );
         }
       }
