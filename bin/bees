@@ -1,5 +1,11 @@
+#! /usr/bin/env node
 var bees = require('../');
 
+if(!process.argv[2]) {
+  console.log('Usage: bees <file>');
+  process.exit();
+}
+
 console.log(
-  bees(require('fs').readFileSync(process.argv[1], 'utf-8'))
+  bees(require('fs').readFileSync(process.argv[2], 'utf-8'))
 );

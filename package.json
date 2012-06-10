@@ -6,8 +6,8 @@
   },
   "scripts": {
     "test": "vows --spec --isolate test/test-*.js"
-  }
+  },
   "bin": {
-    "bees" : "./lib/bees"
+    "bees" : "./bin/bees"
   }
 }
