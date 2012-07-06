@@ -101,6 +101,31 @@ $ node plugin.js
 ]
 ```
 
+## Reporters:
+
+Reporters are a way to return formatted objects.
+
+If we got this in eyes-reporter.js:
+
+```javascript
+var inspector = require('eyes').inspector({stream: null});
+
+module.exports = function(doc) {
+  return inspector(doc);
+};
+```
+
+And we call bees just like this:
+
+```
+bees -R eyes-reporter <file>
+```
+
+We will get:
+
+![eyes](http://i.imgur.com/F9p5M.png)
+
+Cool eh?
 
 ## To Do:
 
