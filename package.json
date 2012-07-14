@@ -6,6 +6,9 @@
   "devDependencies": {
     "vows": ">= 0.0.0"
   },
+  "Dependencies": {
+    "optimist": "*"
+  },
   "scripts": {
     "test": "vows --spec --isolate test/test-*.js"
   },
