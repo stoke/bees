@@ -8,7 +8,7 @@ var argv = require('optimist')
   .demand(['_'])
   .argv;
 
-var reporter = fs.existsSync(argv.R+'.js') && require('./'+argv.R+'.js') || JSON.stringify;
+var reporter = fs.existsSync(argv.R+'.js') && require(process.cwd()+'/'+argv.R+'.js') || JSON.stringify;
 
 console.log(
   reporter(
