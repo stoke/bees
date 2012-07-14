@@ -1,16 +1,15 @@
 {
   "name": "bees",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "yawnt <yawn.localhost@gmail.com>",
-  "description": "HTTP API Generator",
+  "description": "Api documentation generator",
   "devDependencies": {
-    "vows": ">= 0.0.0"
-  },
-  "Dependencies": {
-    "optimist": "*"
+    "mocha": ">= 0.0.0",
+    "should": ">= 0.0.0",
+    "assert": ">= 0.0.0"
   },
   "scripts": {
-    "test": "vows --spec --isolate test/test-*.js"
+    "test": "mocha -R spec -r should test/*-test.js"
   },
   "bin": {
     "bees" : "./bin/bees"

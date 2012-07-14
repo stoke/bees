@@ -1,1 +1,1 @@
-module.exports = require('./lib/bees');
+module.exports = require('./lib/bees.js');

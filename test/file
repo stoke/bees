@@ -1,0 +1,11 @@
+/* @api
+@path GET /lol/:id;
+@descr hi;
+
+*/
+
+/* @api
+@path GET /lol/:id;
+@descr hai;
+@param id string id of the user
+*/
