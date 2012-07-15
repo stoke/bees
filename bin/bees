@@ -1,17 +1,56 @@
 #! /usr/bin/env node
 var bees = require('../');
 
-var fs = require('fs');
+var fs = require('fs'),
+    path = require('path');
 
 var argv = require('optimist')
-  .usage('Usage: $0 -R [reporter] <file>')
+  .usage('Usage: $0 -r [reporter] -f [report] <file>')
   .demand(['_'])
   .argv;
 
-var reporter = fs.existsSync(argv.R+'.js') && require(process.cwd()+'/'+argv.R+'.js') || JSON.stringify;
+function RegExpEscape(str) { // from xregexp
+    return str.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
 
-console.log(
-  reporter(
-    bees.parse(fs.readFileSync(argv._, 'utf-8'))
-  )
-);
+var eol = (process.platform === 'win32') ? '\r\n' : '\n';
+
+if (process.platform === 'win32') { // workaround for wildcard on windows
+    var nfiles, nargs = [];
+
+    argv._.forEach(function(x) {
+        var dir = path.dirname(x);
+
+        nfiles = fs.readdirSync(dir);
+
+        nfiles = nfiles.filter(function(el) {
+            var r = RegExpEscape(el).replace(/\*/g, ".+?");
+
+            return el.match(new RegExp(r));
+        });
+
+        nargs = nargs.concat(nfiles);
+
+        nargs = nargs.map(function(el) {
+            return dir + path.sep + el;
+        });
+    });
+
+    argv._ = nargs || [];
+}
+
+var reporter = fs.existsSync(argv.R+'.js') && require(process.cwd()+'/'+argv.R+'.js') || JSON.stringify;
+var reports = [];
+
+argv._.forEach(function(x) {
+  reports = reports.concat(
+    bees.parse(fs.readFileSync(x, 'utf-8'))
+  );
+});
+
+if (argv.f) {
+  console.log('Writing to '+argv.f);
+  fs.writeFileSync(argv.f, reporter(reports));
+} else {
+  console.log(reporter(reports));
+}
